@@ -7,6 +7,22 @@
 
 <style>
 
+.name {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
 
 .hero h1 {
   font-size: clamp(32px, 5vw, 64px);
@@ -160,8 +176,7 @@ footer{text-align:center;padding:22px;color:#64748b}
   <div class="hero-text">
     
     <span class="badge">Computer Science Student</span>
-<h1>Hi, I'm <span>Shouq Alabdulsalam</span></h1>
-<p>
+<h1>Hi, I'm <span class="name">Shouq Alabdulsalam</span></h1><p>
 
   I am passionate about software development, artificial intelligence, data-driven systems,
   and building meaningful digital solutions through academic projects and hackathons.
