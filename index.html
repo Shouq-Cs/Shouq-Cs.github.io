@@ -1,366 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shouq | Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shouq | Portfolio</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<style>
 
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 64px);
+  white-space: nowrap;
+}
 
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 10%;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+  transition: 0.3s;
+}
 
-    nav h2 {
-      color: #38bdf8;
-      font-size: 22px;
-    }
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+}
 
-    nav a {
-      color: #e5e7eb;
-      text-decoration: none;
-      margin-left: 24px;
-      font-size: 15px;
-    }
 
-    nav a:hover {
-      color: #38bdf8;
-    }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 120px 10% 60px;
-      background:
-        radial-gradient(circle at top right, rgba(56,189,248,0.22), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(99,102,241,0.18), transparent 40%);
-    }
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    .certificate-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 11px 18px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.25s;
+}
 
-    .hero-content {
-      max-width: 900px;
-      text-align: center;
-    }
+.certificate-link:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-3px);
+}
 
-    .badge {
-      display: inline-block;
-      color: #38bdf8;
-      border: 1px solid rgba(56,189,248,0.4);
-      padding: 8px 16px;
-      border-radius: 999px;
-      margin-bottom: 22px;
-      font-size: 14px;
-    }
+   .contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
 
-    .hero h1 {
-      font-size: 58px;
-      margin-bottom: 18px;
-      color: #ffffff;
-    }
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid #dbeafe;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  transition: 0.3s;
+}
 
-    .hero h1 span {
-      color: #38bdf8;
-    }
+.contact-btn svg {
+  color: #2563eb;
+}
 
-    .hero p {
-      font-size: 20px;
-      color: #cbd5e1;
-      max-width: 720px;
-      margin: auto;
-    }
+.contact-btn:hover {
+  transform: translateY(-5px);
+  background: #2563eb;
+  color: white;
+}
 
-    .buttons {
-      margin-top: 34px;
-    }
+.contact-btn:hover svg {
+  color: white;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 13px 24px;
-      border-radius: 10px;
-      text-decoration: none;
-      margin: 8px;
-      font-weight: 600;
-    }
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;background:#f8fbff;color:#0f172a;line-height:1.6}
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;padding:18px 9%;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.logo{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:800;color:#0f172a;margin-left:-35px}
+.logo-icon{width:38px;height:38px;border-radius:14px;background:#e0f2fe;color:#2563eb;display:flex;align-items:center;justify-content:center}
+nav a{margin-left:24px;text-decoration:none;color:#334155;font-weight:600;font-size:14px}
+nav a:hover{color:#2563eb}
 
-    .btn-primary {
-      background: #38bdf8;
-      color: #020617;
-    }
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:space-between;padding:120px 9% 70px;background:linear-gradient(135deg,#ffffff 0%,#f0f9ff 55%,#eaf5ff 100%)}
+.hero-text{max-width:600px}
+.badge{display:inline-block;background:#e0f2fe;color:#2563eb;padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:20px}
+.hero h1{font-size:64px;line-height:1.1;margin-bottom:20px}
+.hero h1 span{color:#60a5fa}
+.hero p{font-size:19px;color:#475569;max-width:560px}
+.buttons{margin-top:30px}
+.btn{display:inline-block;padding:13px 24px;border-radius:14px;text-decoration:none;font-weight:700;margin-right:10px;transition:.25s}
+.btn-primary{background:#3b82f6;color:white;box-shadow:0 10px 22px rgba(59,130,246,.25)}
+.btn-secondary{background:white;color:#2563eb;border:1px solid #bfdbfe}
+.btn:hover{transform:translateY(-3px)}
+.hero-art{width:310px;height:310px;border-radius:48% 52% 62% 38%;background:linear-gradient(135deg,#dbeafe,#f8fafc);position:relative;box-shadow:0 25px 60px rgba(59,130,246,.12)}
+.hero-art:before{content:"✦";position:absolute;top:55px;left:65px;font-size:42px;color:#60a5fa}
+.hero-art:after{content:"</>";position:absolute;bottom:75px;right:65px;font-size:42px;color:#93c5fd;font-weight:800}
 
-    .btn-secondary {
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
-    }
+section{padding:75px 9%}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title h2{font-size:36px;margin-bottom:8px}
+.section-title p{color:#64748b}
 
-    section {
-      padding: 80px 10%;
-    }
+.about-text{max-width:820px;margin:auto;text-align:center;font-size:18px;color:#475569}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:22px;padding:28px;box-shadow:0 14px 34px rgba(15,23,42,.06);transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(37,99,235,.13);border-color:#bfdbfe}
+.card h3{font-size:22px;margin-bottom:10px}
+.card p{color:#475569;margin-bottom:12px}
+.tools{margin-top:16px}
+.tools strong{display:block;margin-bottom:8px;color:#0f172a}
+.tag{display:inline-block;background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:700;margin:4px}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-      font-size: 36px;
-      color: #ffffff;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #94a3b8;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: #111827;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 26px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(56,189,248,0.6);
-    }
-
-    .card h3 {
-      color: #ffffff;
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
-
-    .card p {
-      color: #cbd5e1;
-      margin-bottom: 14px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: rgba(56,189,248,0.12);
-      color: #38bdf8;
-      padding: 6px 11px;
-      border-radius: 999px;
-      font-size: 13px;
-      margin: 4px 4px 0 0;
-    }
-
-    .about {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      color: #cbd5e1;
-      font-size: 18px;
-    }
-
-    .contact {
-      text-align: center;
-      background: #020617;
-    }
-
-    .contact p {
-      color: #cbd5e1;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      background: #020617;
-      color: #64748b;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    @media (max-width: 700px) {
-      nav {
-        padding: 15px 6%;
-      }
-
-      nav div {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-    }
-  </style>
+.skills-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.skill-box{background:white;border:1px solid #e2e8f0;border-radius:22px;padding:28px;box-shadow:0 14px 34px rgba(15,23,42,.06)}
+.skill-box h3{margin-bottom:16px;color:#2563eb}
+.contact{background:#eef6ff;text-align:center;border-radius:32px;margin:40px 9%;padding:45px}
+footer{text-align:center;padding:22px;color:#64748b}
+@media(max-width:800px){nav div:last-child{display:none}.hero{flex-direction:column;text-align:center}.hero h1{font-size:44px}.hero-art{margin-top:40px}.logo{margin-left:0}}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <h2>Shouq</h2>
-    <div>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#research">Research</a>
-      <a href="#hackathons">Hackathons</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav>
+  <div class="logo">
+    <div class="logo-icon">✦</div>Shouq</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#hackathons">Hackathons</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-  <div class="hero">
-    <div class="hero-content">
-      <span class="badge">Computer Science Student</span>
-      <h1>Hi, I'm <span>Shouq</span></h1>
-      <p>
-        I build academic and innovation-driven technology projects, with interests in
-        databases, data structures, research, and hackathon solutions.
-      </p>
 
-      <div class="buttons">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-secondary">Contact Me</a>
-      </div>
+
+
+<div class="hero">
+  <div class="hero-text">
+    
+    <span class="badge">Computer Science Student</span>
+<h1>Hi, I'm <span>Shouq Alabdulsalam</span></h1>
+<p>
+
+  I am passionate about software development, artificial intelligence, data-driven systems,
+  and building meaningful digital solutions through academic projects and hackathons.
+</p>
+
+
+
+    <div class="buttons">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-secondary">Contact Me</a>
     </div>
   </div>
+  <div class="hero-art"></div>
+</div>
 
-  <section id="about">
-    <div class="section-title">
-      <h2>About Me</h2>
-      <p>A quick introduction</p>
+<section id="about">
+  <div class="section-title">
+    <h2>About Me</h2>
+    <p>A brief introduction</p>
+  </div>
+  <p class="about-text">
+    I am a Computer Science student with a strong interest in software development,
+    artificial intelligence, databases, and problem-solving. I enjoy learning new technologies,
+    working on practical projects, and participating in hackathons that challenge me to think
+    creatively and collaborate with teams.
+  </p>
+</section>
+
+<section id="education">
+  <div class="section-title">
+    <h2>Education</h2>
+    <p>Academic background</p>
+  </div>
+  <div class="card">
+    <h3>King Saud University</h3>
+    <p>Bachelor of Science in Computer Science</p>
+    <p><strong>Expected Graduation:</strong> 2027</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-title">
+    <h2>Skills</h2>
+    <p>Technical and professional strengths</p>
+  </div>
+
+  <div class="skills-container">
+    <div class="skill-box">
+      <h3>Hard Skills</h3>
+      <span class="tag">Java</span>
+      <span class="tag">C</span>
+      <span class="tag">Python</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">SQL</span>
     </div>
-    <p class="about">
-      I am a Computer Science student passionate about solving real-world problems through technology.
-      My work includes academic software projects, research writing, and participation in hackathons
-      where I collaborate with teams to design practical and impactful solutions.
-    </p>
-  </section>
 
-  <section id="projects">
-    <div class="section-title">
-      <h2>Projects</h2>
-      <p>Academic and technical work</p>
+    <div class="skill-box">
+      <h3>Soft Skills</h3>
+      <span class="tag">Problem Solving</span>
+      <span class="tag">Teamwork</span>
+      <span class="tag">Communication</span>
+      <span class="tag">Adaptability</span>
+      <span class="tag">Critical Thinking</span>
+      <span class="tag">Time Management</span>
     </div>
+  </div>
+</section>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Database System Project</h3>
-        <p>
-          Designed and implemented a database system focused on organizing,
-          managing, and querying structured data efficiently.
-        </p>
-        <span class="tag">Database</span>
+<section id="projects">
+  <div class="section-title">
+    <h2>Projects</h2>
+    <p>Academic projects and research work</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Database System Project</h3>
+      <p>
+        Designed and implemented a database system to organize, store, and manage structured data
+        efficiently while supporting data retrieval and system usability.
+      </p>
+      <a href="https://github.com/Shouq-Cs/database-system-project" target="_blank" class="certificate-link">
+  View on GitHub
+</a>
+      <div class="tools">
+        <strong>Tools & Technologies</strong>
         <span class="tag">SQL</span>
-        <span class="tag">System Design</span>
+        <span class="tag">Database Design</span>
+        <span class="tag">ERD</span>
       </div>
+    </div>
 
-      <div class="card">
-        <h3>Data Structures Project</h3>
-        <p>
-          Developed a Java-based system using data structures to improve
-          searching, storing, and retrieving data.
-        </p>
+    <div class="card">
+      <h3>Data Structures Project</h3>
+      <p>
+        Developed a Java-based project focused on efficient data organization, searching,
+        and retrieval using core data structures and algorithmic concepts.
+      </p>
+
+      <a href="#" class="certificate-link">View Project</a> 
+      <div class="tools">
+        <strong>Tools & Technologies</strong>
         <span class="tag">Java</span>
         <span class="tag">Data Structures</span>
         <span class="tag">Algorithms</span>
       </div>
     </div>
-  </section>
-
-  <section id="research">
-    <div class="section-title">
-      <h2>Research</h2>
-      <p>Academic research work</p>
-    </div>
 
     <div class="card">
       <h3>Ethical Challenges of Neuralink & Brain-Computer Interface</h3>
       <p>
-        A research paper exploring the ethical challenges related to Neuralink and
-        brain-computer interface technologies, including privacy, security,
-        autonomy, and human enhancement concerns.
+        Wrote a research paper discussing ethical concerns related to brain-computer interfaces,
+        including privacy, security, human autonomy, and the responsible use of emerging technologies.
       </p>
-      <span class="tag">AI Ethics</span>
-      <span class="tag">Neurotechnology</span>
-      <span class="tag">Research</span>
-    </div>
-  </section>
-
-  <section id="hackathons">
-    <div class="section-title">
-      <h2>Hackathons</h2>
-      <p>Innovation and teamwork experiences</p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Digital Transformation Hackathon</h3>
-        <p><strong>Hosted by:</strong> King Saud University</p>
-        <p><strong>Project:</strong> Madd</p>
-        <p>
-          Participated in building an innovative solution focused on digital transformation
-          and practical technology-driven impact.
-        </p>
-        <span class="tag">Hackathon</span>
-        <span class="tag">Innovation</span>
-      </div>
-
-      <div class="card">
-        <h3>IMD Hackathon</h3>
-        <p><strong>Hosted by:</strong> Alinma Bank</p>
-        <p><strong>Project:</strong> Hassala</p>
-        <p>
-          Worked on a financial technology solution designed to encourage better saving habits
-          and support personal finance awareness.
-        </p>
-        <span class="tag">FinTech</span>
-        <span class="tag">Hackathon</span>
+      <a href="research.pdf" target="_blank" class="certificate-link">
+  View Paper
+</a>
+      <div class="tools">
+        <strong>Focus Areas</strong>
+        <span class="tag">AI Ethics</span>
+        <span class="tag">Neurotechnology</span>
+        <span class="tag">Research Writing</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact" class="contact">
-    <div class="section-title">
-      <h2>Contact</h2>
-      <p>Let's connect</p>
+<section id="hackathons">
+  <div class="section-title">
+    <h2>Hackathons</h2>
+    <p>Innovation, teamwork, and real-world problem solving</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Digital Transformation Hackathon</h3>
+      <p><strong>Hosted by:</strong> King Saud University</p>
+      <p><strong>Project:</strong> Madd</p>
+      <p>
+        Participated in developing a digital solution that addresses transformation challenges,
+        focusing on user experience, idea validation, and presenting a practical concept.
+      </p>
+      <div class="tools">
+        <strong>Tools & Technologies</strong>
+        <span class="tag">Figma</span>
+        <span class="tag">UX/UI</span>
+        <span class="tag">Teamwork</span>
+      </div>
     </div>
 
-    <p>Email: your-email@example.com</p>
-    <div class="buttons">
-      <a href="https://github.com/Shouq-Cs" class="btn btn-primary">GitHub</a>
-      <a href="#" class="btn btn-secondary">LinkedIn</a>
+    <div class="card">
+      <h3>IMD Hackathon</h3>
+      <p><strong>Hosted by:</strong> Alinma Bank</p>
+      <p><strong>Project:</strong> Hassala</p>
+      <p>
+        Worked on a simple chatbot-based financial solution designed to support saving habits
+        and improve user interaction with personal finance concepts.
+      </p>
+      <div class="tools">
+        <strong>Tools & Technologies</strong>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Chatbot Concept</span>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+<section id="courses">
+  <div class="section-title">
+    <h2>Courses & Programs</h2>
+    <p>Learning and development</p>
+  </div>
 
-  <footer>
-    © 2026 Shouq. All rights reserved.
-  </footer>
+  <div class="card">
+    <h3>Tuwaiq Programming Challenge – Python</h3>
+    <p>
+      Completed a Python programming course by Tuwaiq Academy, covering programming
+      fundamentals, problem solving, and practical Python applications.
+    </p>
+
+    <div class="tools">
+      <strong>Skills Covered</strong>
+      <span class="tag">Python</span>
+      <span class="tag">Programming Fundamentals</span>
+      <span class="tag">Problem Solving</span>
+    </div>
+
+    <a href="tuwaiq-certificate.jpg" target="_blank" class="certificate-link">
+      View Certificate
+    </a>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="section-title">
+    <h2>Let's Connect</h2>
+    <p>Feel free to reach out</p>
+  </div>
+
+  <div class="contact-container">
+
+    <!-- Email -->
+    <a href="mailto:shooqabdulsalam20@gmail.com" class="contact-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+        <path d="m22 7-10 6L2 7"></path>
+      </svg>
+      Email
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/shouq-alabdulsalam-0b0b45317" target="_blank" class="contact-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor">
+        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6 1.1 6 0 4.88 0 3.5S1.1 1 2.49 1c1.38 0 2.49 1.12 2.49 2.5zM.24 8h4.5v14h-4.5V8zm7.26 0h4.3v1.92h.06c.6-1.14 2.06-2.34 4.24-2.34 4.54 0 5.38 2.98 5.38 6.85V22h-4.5v-6.94c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V22H7.5V8z"/>
+      </svg>
+      LinkedIn
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/Shouq-Cs" target="_blank" class="contact-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12a12 12 0 0 0 8.2 11.38c.6.1.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.38-1.34-1.74-1.34-1.74-1.1-.75.08-.74.08-.74 1.22.08 1.86 1.25 1.86 1.25 1.08 1.86 2.84 1.32 3.53 1 .1-.78.42-1.32.76-1.63-2.66-.3-5.46-1.33-5.46-5.92 0-1.3.46-2.37 1.23-3.2-.13-.3-.54-1.5.12-3.12 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.62.25 2.82.12 3.12.77.83 1.23 1.9 1.23 3.2 0 4.6-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.21.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+      GitHub
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Shouq. All rights reserved.
+</footer>
 
 </body>
 </html>
