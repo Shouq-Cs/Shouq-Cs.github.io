@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shouq | Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav h2 {
+      color: #38bdf8;
+      font-size: 22px;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 10% 60px;
+      background:
+        radial-gradient(circle at top right, rgba(56,189,248,0.22), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(99,102,241,0.18), transparent 40%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      color: #38bdf8;
+      border: 1px solid rgba(56,189,248,0.4);
+      padding: 8px 16px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #cbd5e1;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .buttons {
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin: 8px;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .btn-secondary {
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 26px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(56,189,248,0.6);
+    }
+
+    .card h3 {
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(56,189,248,0.12);
+      color: #38bdf8;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin: 4px 4px 0 0;
+    }
+
+    .about {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .contact {
+      text-align: center;
+      background: #020617;
+    }
+
+    .contact p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      background: #020617;
+      color: #64748b;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 15px 6%;
+      }
+
+      nav div {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h2>Shouq</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#hackathons">Hackathons</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content">
+      <span class="badge">Computer Science Student</span>
+      <h1>Hi, I'm <span>Shouq</span></h1>
+      <p>
+        I build academic and innovation-driven technology projects, with interests in
+        databases, data structures, research, and hackathon solutions.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>A quick introduction</p>
+    </div>
+    <p class="about">
+      I am a Computer Science student passionate about solving real-world problems through technology.
+      My work includes academic software projects, research writing, and participation in hackathons
+      where I collaborate with teams to design practical and impactful solutions.
+    </p>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      <h2>Projects</h2>
+      <p>Academic and technical work</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Database System Project</h3>
+        <p>
+          Designed and implemented a database system focused on organizing,
+          managing, and querying structured data efficiently.
+        </p>
+        <span class="tag">Database</span>
+        <span class="tag">SQL</span>
+        <span class="tag">System Design</span>
+      </div>
+
+      <div class="card">
+        <h3>Data Structures Project</h3>
+        <p>
+          Developed a Java-based system using data structures to improve
+          searching, storing, and retrieving data.
+        </p>
+        <span class="tag">Java</span>
+        <span class="tag">Data Structures</span>
+        <span class="tag">Algorithms</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="section-title">
+      <h2>Research</h2>
+      <p>Academic research work</p>
+    </div>
+
+    <div class="card">
+      <h3>Ethical Challenges of Neuralink & Brain-Computer Interface</h3>
+      <p>
+        A research paper exploring the ethical challenges related to Neuralink and
+        brain-computer interface technologies, including privacy, security,
+        autonomy, and human enhancement concerns.
+      </p>
+      <span class="tag">AI Ethics</span>
+      <span class="tag">Neurotechnology</span>
+      <span class="tag">Research</span>
+    </div>
+  </section>
+
+  <section id="hackathons">
+    <div class="section-title">
+      <h2>Hackathons</h2>
+      <p>Innovation and teamwork experiences</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Digital Transformation Hackathon</h3>
+        <p><strong>Hosted by:</strong> King Saud University</p>
+        <p><strong>Project:</strong> Madd</p>
+        <p>
+          Participated in building an innovative solution focused on digital transformation
+          and practical technology-driven impact.
+        </p>
+        <span class="tag">Hackathon</span>
+        <span class="tag">Innovation</span>
+      </div>
+
+      <div class="card">
+        <h3>IMD Hackathon</h3>
+        <p><strong>Hosted by:</strong> Alinma Bank</p>
+        <p><strong>Project:</strong> Hassala</p>
+        <p>
+          Worked on a financial technology solution designed to encourage better saving habits
+          and support personal finance awareness.
+        </p>
+        <span class="tag">FinTech</span>
+        <span class="tag">Hackathon</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Let's connect</p>
+    </div>
+
+    <p>Email: your-email@example.com</p>
+    <div class="buttons">
+      <a href="https://github.com/Shouq-Cs" class="btn btn-primary">GitHub</a>
+      <a href="#" class="btn btn-secondary">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Shouq. All rights reserved.
+  </footer>
+
+</body>
+</html>
